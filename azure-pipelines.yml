@@ -8,17 +8,17 @@ stages:
     displayName: "Instalar Apache y desplegar app estática"
 
     environment:
-      name: "VM-DEVOPS-LINUX"   # Nombre de tu entorno en DevOps
+      name: "VM-DEVOPS-LINUX"   # Nombre de entorno en DevOps
       resourceType: VirtualMachine
 
     strategy:
       runOnce:
         deploy:
           steps:
-          - checkout: self   # Clona tu repo en el agente de pipeline
+          - checkout: self   # Clonar repo en el agente de pipeline
 
           - script: |
-              echo "Iniciando instalación de Apache..."
+              echo "Iniciando instalación de Apache...se omite si existe apache"
               sudo apt-get update
               sudo apt-get install -y apache2
               
